@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Java (SonarCloud needs Java, even for JS/HTML)
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
@@ -31,7 +31,5 @@ jobs:
 
       - name: Run SonarCloud Analysis
         uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          organization: 0arshadkhan0   # 🔁 Replace this
-          projectKey: my-app  # 🔁 Replace this
-          token: ${{ secrets.SONAR_TOKEN }}
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
