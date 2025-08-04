@@ -31,5 +31,8 @@ jobs:
 
       - name: Run SonarCloud Analysis
         uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          projectKey: my-app
+          organization: Mohd Arshad Khan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
